@@ -109,3 +109,31 @@ OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
 THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+### XPlaneConnect plugin error in Ubuntu
+
+Edit the CMakeLists.txt and add CameraCallbacks.cpp as follows:
+
+add_library(xpc64 SHARED XPCPlugin.cpp
+CameraCallbacks.cpp
+DataManager.cpp
+Drawing.cpp
+Log.cpp
+Message.cpp
+MessageHandlers.cpp
+Timer.cpp
+UDPSocket.cpp)
+
+and compile using cmake and make.
+In case having error like "fatal error: bits/c++config.h: No such file or directory " while compiling, run this before compile:
+
+sudo apt-get install gcc-multilib g++-multilib
+
+~/XPlaneConnect-1.3-rc6/xpcPlugin
+
+mkdir build
+cd build
+cmake ..
+make
+
+Then put the lin.xpl in to
+~/.local/share/Steam/steamapps/common/X-Plane 11/Resources/plugins/XPlaneConnect/64
