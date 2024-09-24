@@ -137,3 +137,6 @@ make
 
 Then put the lin.xpl in to
 ~/.local/share/Steam/steamapps/common/X-Plane 11/Resources/plugins/XPlaneConnect/64
+
+### Useful link
+https://austinsnerdythings.com/2021/10/15/creating-an-autopilot-in-x-plane-using-python-part-1/
